@@ -1,5 +1,5 @@
 
-import './App.css';
+import './index.css';
 import {useState} from 'react';
 import Employee from './components/Employee'
 
@@ -8,7 +8,7 @@ function App() {
   console.log('we are about to list the employees');
   const showEmployees = true;
   return (
-    <div className="App">
+    <div className = "App bg-red-300">
       {showEmployees ? 
       (
       <>
