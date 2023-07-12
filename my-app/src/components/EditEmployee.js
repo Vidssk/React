@@ -22,10 +22,12 @@ function EditEmployee(props) {
         </Modal.Header>
         <Modal.Body>
         <form onSubmit={(e) => 
-        {e.preventDefault();
+        {
+            e.preventDefault();
+            handleClose();
             console.log("hello from edit Employee");
             console.log(props.id,name,role);
-            props.updateEmployee(props.id,name,role);    
+           props.updateEmployee(props.id,name,role);   
         }}
         id='editmodal' className="w-full max-w-sm">
         <div className="md:flex md:items-center mb-6">

@@ -5,6 +5,7 @@ import Employee from './components/Employee'
 import {v4 as uuidv4} from 'uuid';
 import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/EditEmployee';
+import Header from './components/Header';
 
 function App() {
   const [role, setRole] = useState('dev');
@@ -53,19 +54,19 @@ function App() {
       img: "https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       }
     ]
-  );
-  function updateEmployee(id, newName, newRole)
-  {
-    console.log('updateEmployee inside of app.js');
-    const updatedEmployees = employees.map((employee)=> {
-        if(id == employee.id) {
-          return{...employee, name: newName, role: newRole}//spreading
-          // return 
-        }
-        return employee;
-    });
-    SetEmployees(updatedEmployees);
-  };
+    );
+    function updateEmployee(id, newName, newRole)
+    {
+      console.log('updateEmployee inside of app.js');
+      const updatedEmployees = employees.map((employee)=> {
+          if(id == employee.id) {
+            return{...employee, name: newName, role: newRole}//spreading
+            // return 
+          }
+          return employee;
+        });
+        SetEmployees(updatedEmployees);
+    };
   function newEmployee(name, role, img){
     const newEmployee = {
       id: uuidv4(),
@@ -77,19 +78,15 @@ function App() {
   };
   const showEmployees = true;
   return (
-    <div>
+    <div className="App bg-gray-300 min-h-screen">
+      <Header />
       {showEmployees ? 
       (
       <>
-      <input type='text' onChange={(e) => {
-        // console.log(e.target.value);
-        setRole(e.target.value);
-      }}
-      />
       <div className="flex flex-wrap justify-center">
         {employees.map((employee) => {
           // console.log(uuidv4());
-          const editEmployee = <EditEmployee id={employee.id} name={employee.name} role={employee.role} updateEmployee={employee.updateEmployee}/>
+          const editEmployee = <EditEmployee id={employee.id} name={employee.name} role={employee.role} updateEmployee={updateEmployee}/>
           return (
           <Employee
             key={employee.id}
