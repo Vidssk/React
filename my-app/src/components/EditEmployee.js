@@ -57,7 +57,7 @@ function EditEmployee(props) {
         <Modal.Footer>
 
           <button className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded" onClick={handleClose}>Close</button>
-          <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" form="editmodal">Update</button>
+          <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" form="editmodal" onClick={handleClose}>Update</button>
 
         </Modal.Footer>
       </Modal>
