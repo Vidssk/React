@@ -6,14 +6,20 @@ import './index.css';
 // import AddEmployee from './components/AddEmployee';
 // import EditEmployee from './components/EditEmployee';
 import Header from './components/Header';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Employees from './pages/Employees';
 
 function App() {
 
 return (
+<BrowserRouter>
 <Header>
-<Employees/>
+    <Routes>
+      <Route path='/' element={<Employees/>}/>
+    </Routes>
+  
 </Header>
+</BrowserRouter>
 );
 }
 
