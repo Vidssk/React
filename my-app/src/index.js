@@ -9,5 +9,6 @@ root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  // will make it run twice
 );
 

@@ -4,9 +4,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { NavLink } from 'react-router-dom'
 
 const navigation = [
-  { name: 'Employees', href: '/Employees'},
+  { name: 'Employees', href: '/employees'},
   { name: 'Customers', href: '/Customers'},
-  { name: 'Projects', href: '/other'},
+  { name: 'Dictionary', href: '/dictionary'},
   { name: 'Calendar', href: '/'},
 ]
 
@@ -53,7 +53,7 @@ export default function Header(props) {
                         key={item.name}
                         to={item.href}
                         className={({isActive})=> {
-                          console.log(item.href + ' ' + isActive);
+                          // console.log(item.href + ' ' + isActive);
                              return 'no-underline rounded-md px-3 py-2 text-sm font-medium' +
                              (!isActive ? 'no-underline text-gray-300 hover:bg-gray-700 hover:text-white' : 'no-underline bg-gray-900 text-white' );
                         }} 
