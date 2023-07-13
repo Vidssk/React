@@ -78,7 +78,7 @@ function Employees() {
   function newEmployee(name, role, img){
     const newEmployee = {
       id: uuidv4(),
-      name: name,
+      name: name, 
       role: role,
       img: img,
     };
@@ -86,7 +86,7 @@ function Employees() {
   };
   const showEmployees = true;
   return (
-    <div className="App bg-gray-300 min-h-screen">
+    <div>
    
       {showEmployees ? 
       (
